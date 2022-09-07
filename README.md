@@ -1,1 +1,1 @@
-# reddit-a.sh
+# reddit
