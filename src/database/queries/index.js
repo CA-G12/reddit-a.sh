@@ -1,3 +1,3 @@
-const { checkIfUserExist, insertUser } = require('./users');
+const { checkIfUserExist, insertUser, userByEmail } = require('./users');
 
-module.exports = { checkIfUserExist, insertUser };
+module.exports = { checkIfUserExist, insertUser, userByEmail };
