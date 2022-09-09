@@ -10,6 +10,7 @@ let ssl = false;
 
 switch (NODE_ENV) {
   case 'dev':
+
     dbUrl = DB_URL;
     break;
   case 'test':
@@ -25,7 +26,7 @@ switch (NODE_ENV) {
 }
 
 const connection = new Pool({
-  dbUrl,
+  connectionString: dbUrl,
   ssl,
 });
 

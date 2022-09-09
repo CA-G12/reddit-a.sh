@@ -1,3 +1,4 @@
 const { signup } = require('./auth');
+const { homePageC } = require('./user');
 
-module.exports = { signup };
+module.exports = { signup, homePageC };
