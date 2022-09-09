@@ -2,27 +2,30 @@ const bcrypt = require('bcryptjs');
 const { sign } = require('jsonwebtoken');
 const { signupSchema } = require('../../validation');
 require('dotenv').config();
+const { checkIfUserExist, insertUser } = require('../../database/queries');
 
 const signup = (req, res) => {
-  const { password, username, email } = req.body;
+  const {
+    username, email, firstname, lastname, password, img,
+  } = req.body;
+
   const { error } = signupSchema.validate(req.body, { abortEarly: false });
 
   if (error) {
     res.send({ error: error.message, state: 'fail' });
   } else {
-    // check if user in database
-  // query to check
-  // const userExist = '';
-
-    // if (userExist) {
-    //   res.send({ error: 'user already exist' });
-    // }
-
-    bcrypt.genSalt(10)
-      .then((salt) => bcrypt.hash(password, salt))
-      .then((hash) => console.log(hash)) // add user query
-      .then(() => sign({ username, email }, process.env.SECRET_KEY, { algorithm: 'HS256' }))
-      .then((encodded) => res.send({ token: encodded }))
+    checkIfUserExist(email, username)
+      .then((data) => {
+        if (data.rows[0].count !== '0') {
+          res.send({ error: 'user already exist' });
+        } else {
+          bcrypt.genSalt(10)
+            .then((salt) => bcrypt.hash(password, salt))
+            .then((hash) => insertUser(username, email, firstname, lastname, hash, img))
+            .then(() => sign({ email, password }, process.env.SECRET_KEY, { algorithm: 'HS256' }))
+            .then((token) => res.cookie('token', token).redirect('/user/homepage'));
+        }
+      })
       .catch((err) => res.send(err));
   }
 };
