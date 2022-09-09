@@ -1,0 +1,14 @@
+BEGIN;
+
+DROP TABLE IF EXISTS posts CASCADE;
+
+CREATE TABLE posts(
+    id SERIAL PRIMARY KEY,
+    _text TEXT, 
+    img VARCHAR(255),
+    created TIMESTAMP,
+    user_id INTEGER NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES  users(id) ON DELETE CASCADE
+);
+
+COMMIT;

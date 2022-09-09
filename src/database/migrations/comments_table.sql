@@ -1,0 +1,13 @@
+BEGIN;
+DROP TABLE IF EXISTS comments CASCADE;
+
+CREATE TABLE comments(
+    id SERIAL PRIMARY KEY,
+    _text TEXT,
+    user_id INTEGER NOT NULL REFERENCES  users(id) ON DELETE CASCADE,
+    post_id INTEGER NOT NULL REFERENCES  posts(id) ON DELETE CASCADE,
+    created TIMESTAMP
+);
+
+COMMIT;
+
