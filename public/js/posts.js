@@ -18,14 +18,14 @@ const createElement = (type, options, children) => {
 
 const createOnePost = (data) => {
   data.forEach((post) => {
-    // console.log(ele.firstname);
-    // const nameh3 = createElement('h3', { class: '' }, game.name);
-    // const iconDown = createElement('i', { class: '' }, '-1');
-    // const iconUp = createElement('i', { class: 'fa fa-arrow-up' }, '-1');
-    const up = createElement('a', { class: '' }, '+');
-    const down = createElement('a', { class: '' }, '-');
-    const spanVotes = createElement('span', { class: '' }, '15');
-    const postVotes = createElement('div', { class: 'post-votes' }, [down, spanVotes, up]);
+    // // console.log(ele.firstname);
+    // // const nameh3 = createElement('h3', { class: '' }, game.name);
+    // // const iconDown = createElement('i', { class: '' }, '-1');
+    // // const iconUp = createElement('i', { class: 'fa fa-arrow-up' }, '-1');
+    // const up = createElement('a', { class: '' }, '+');
+    // const down = createElement('a', { class: '' }, '-');
+    // const spanVotes = createElement('span', { class: '' }, '15');
+    // const postVotes = createElement('div', { class: 'post-votes' }, [down, spanVotes, up]);
 
     const userImg = createElement('img', { class: 'user-img' }, null);
     userImg.src = post.userimg;
@@ -47,7 +47,7 @@ const createOnePost = (data) => {
 
     const postDetails = createElement('div', { class: 'post-details' }, [userDetails, postContent, postIcons]);
 
-    const onePost = createElement('div', { class: 'post' }, [postVotes, postDetails]);
+    const onePost = createElement('div', { class: 'post' }, [postDetails]);
     posts.appendChild(onePost);
   });
 };
