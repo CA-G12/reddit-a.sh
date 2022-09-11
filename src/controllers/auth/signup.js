@@ -22,7 +22,9 @@ const signup = (req, res) => {
           bcrypt.genSalt(10)
             .then((salt) => bcrypt.hash(password, salt))
             .then((hash) => insertUser(username, email, firstname, lastname, hash, img))
-            .then(() => sign(req.body, process.env.SECRET_KEY, { algorithm: 'HS256' }))
+            .then(() => sign({
+              username, firstname, lastname, img,
+            }, process.env.SECRET_KEY, { algorithm: 'HS256' }))
             .then((token) => res.cookie('token', token).redirect('/user/homepage'));
         }
       })

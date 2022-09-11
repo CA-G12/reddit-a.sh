@@ -118,7 +118,7 @@ input:focus {
 
 }
 
-.login:hover {
+.login:hover, .add-post button:hover {
     cursor: pointer;
     background-color: #F6F7F8;
 
@@ -126,17 +126,50 @@ input:focus {
 
 .main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 90vw;
 }
 
+.add-post {
+    width: 37em;
+    margin-top: 6rem;
+    padding: 0.5rem;
+    background-color: white;
+}
+
+.add-post input {
+    width: 100%;
+    border: none;
+    padding: 0.5em;
+    height: 2.5em;
+    background-color: #F8F9FA;
+  
+}
+
+.posttext{
+    border-radius: 5px 5px 0 0;
+}
+
+.postimg{
+    border-radius: 0 0 5px 5px ;
+}
+
+.add-post button {
+
+    padding: 0.2em 0.6em;
+    margin: 0.3em 0;
+    background-color: white;
+    color: #017AD3;
+    border: 2px solid #017AD3;
+    border-radius: 10px;
+
+}
+
 .posts {
     max-width: 90%;
-    padding-top: 8rem;
-
-
-
+    padding-top: 2rem;
 }
 
 .post {
@@ -206,79 +239,80 @@ input:focus {
 }
 
 
-.container{
-        /* display: none !important; */
-      position: absolute;
-      top: 60%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 30%;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.5) ;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1em;
-      background-color: white;
-  }
-  
-  
-    .container .close-btn:hover{
-      color: black;
-    }
-  
-    .container .tilte{
-      font-size: 1.8em;
-      font-weight: 550;
-      text-align: center;
-      margin-bottom: .5rem;
-    }
-  
-    .container form .data{
-     height: 45px;
+.container {
+    /* display: none !important; */
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    background-color: white;
+}
 
-     margin: 10px ;
-    }
-  
-    form .data label{
-      font-size: 0.9rem;
-    }
-  
-  
-    form .data input, .owners-list{
-      height: 30px;
-      width: 100%;
-      border: 1px solid lightgrey;
-      padding-left: 0.8rem;
-    }
-    form .btn{
-      margin: 15px ;
-  
-    }
-  
-    form .btn button{
-      display: block;
-      height: 40px;
-      width: 100%;
-      border: none;
-      cursor: pointer;
-      letter-spacing: 1px;
-      background-color: #017AD3;
-      border-radius: 9999px;
-      color: #fff;
-    }
-  
-    form .btn button:hover{
-      background-color: #43588d;
-    }
 
-   .close{
-        background-color: red;
-        border: none;
-        border-radius: 25px;
-        padding: 5px 10px;
-        color: white;
-       text-align: right;
+.container .close-btn:hover {
+    color: black;
+}
 
-    }
-    
+.container .tilte {
+    font-size: 1.8em;
+    font-weight: 550;
+    text-align: center;
+    margin-bottom: .5rem;
+}
+
+.container form .data {
+    height: 45px;
+
+    margin: 10px;
+}
+
+form .data label {
+    font-size: 0.9rem;
+}
+
+
+form .data input,
+.owners-list {
+    height: 30px;
+    width: 100%;
+    border: 1px solid lightgrey;
+    padding-left: 0.8rem;
+}
+
+form .btn {
+    margin: 15px;
+
+}
+
+form .btn button {
+    display: block;
+    height: 40px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    background-color: #017AD3;
+    border-radius: 9999px;
+    color: #fff;
+}
+
+form .btn button:hover {
+    background-color: #43588d;
+}
+
+.close {
+    background-color: red;
+    border: none;
+    border-radius: 25px;
+    padding: 5px 10px;
+    color: white;
+    text-align: right;
+
+}
