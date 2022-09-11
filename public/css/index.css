@@ -131,45 +131,9 @@ input:focus {
     align-items: center;
     width: 90vw;
 }
-
-.add-post {
-    width: 37em;
-    margin-top: 6rem;
-    padding: 0.5rem;
-    background-color: white;
-}
-
-.add-post input {
-    width: 100%;
-    border: none;
-    padding: 0.5em;
-    height: 2.5em;
-    background-color: #F8F9FA;
-  
-}
-
-.posttext{
-    border-radius: 5px 5px 0 0;
-}
-
-.postimg{
-    border-radius: 0 0 5px 5px ;
-}
-
-.add-post button {
-
-    padding: 0.2em 0.6em;
-    margin: 0.3em 0;
-    background-color: white;
-    color: #017AD3;
-    border: 2px solid #017AD3;
-    border-radius: 10px;
-
-}
-
 .posts {
     max-width: 90%;
-    padding-top: 2rem;
+    padding-top: 5rem;
 }
 
 .post {
