@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -40,6 +41,7 @@
         </div>
         <div class="right">
       
+            <p class="userFullName">User</p>
                 <a href="/user/logout" ><button class="logout login"> Log Out</button></a>
      
 
@@ -49,6 +51,15 @@
     </header>
 
     <section class="main">
+
+    <div class="add-post">
+        <input type="text" name="posttext"class="posttext" id="posttext" placeholder="What's in your mind..">
+        <input type="text" name="postimg" class="postimg" id="postimg" placeholder="add img url..">
+
+        <button class="addpost">Post</button>
+
+    </div>
+
         <div class="posts">
             <div class="post">
                 <div class="post-votes">

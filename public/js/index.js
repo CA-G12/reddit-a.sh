@@ -27,7 +27,12 @@ signupbtn.addEventListener('click', (e) => {
       img: img.value,
     }),
 
-  }).then((data) => data.json()).then((data) => window.open('../html/homepage.html'))
+  }).then((data) => data.json()).then((data) => {
+    console.log({ data });
+    window.localStorage.setItem('user', `${data.firstname} ${data.lastname}`);
+    window.localStorage.setItem('user-id', data.id);
+    window.open('../html/homepage.html', '_self');
+  })
     .catch((result) => console.log(result));
 });
 
@@ -44,7 +49,13 @@ loginbtn.addEventListener('click', (e) => {
       password: passwordLogin.value,
 
     }),
+  }).then((data) => data.json()).then((data) => {
+    console.log({ data });
+    window.localStorage.setItem('firstname', `${data.firstname}`);
+    window.localStorage.setItem('lastname', `${data.lastname}`);
+    window.localStorage.setItem('user-id', data.id);
+    window.open('../html/homepage.html', '_self');
+  })
 
-  }).then((data) => data.json()).then((data) => window.open('../html/homepage.html'))
     .catch((result) => console.log(result));
 });

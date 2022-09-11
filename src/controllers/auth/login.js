@@ -8,6 +8,7 @@ const login = (req, res) => {
   const { email, password } = req.body;
   let firstname = '';
   let id = '';
+  let lastname = '';
 
   const { error } = loginSchema.validate(req.body, { abortEarly: false });
 
@@ -17,13 +18,16 @@ const login = (req, res) => {
     userByEmail(email)
       .then((data) => {
         firstname = data.rows[0].firstname;
-        id = data.rows[0].firstname;
+        lastname = data.rows[0].lastname;
+        id = data.rows[0].id;
         bcrypt.compare(password, data.rows[0].password);
       })
       .then((result) => {
         if (result === 'false') res.json({ result: 'Pleas, check your password' });
         else {
-          sign({ ...req.body, firstname, id }, process.env.SECRET_KEY, { algorithm: 'HS256' }, (err, token) => {
+          sign({
+            email, firstname, lastname, id,
+          }, process.env.SECRET_KEY, { algorithm: 'HS256' }, (err, token) => {
             if (err) res.send(err);
             else {
               res.cookie('token', token).redirect('/user/homepage');
