@@ -1,5 +1,5 @@
 # reddit
-This site supposed to be a reddit clone.
+This site supposed to be a reddit clone.  
 Here, at this time the user can view the posts and he has to signup/login to be able to add posts also he can logout
 
 # The ER diagram
