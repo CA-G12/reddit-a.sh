@@ -41,11 +41,11 @@ const createOnePost = (data) => {
     postImg.src = post.img;
     const postContent = createElement('div', { class: 'post-content' }, [postText, postImg]);
 
-    const iconComment = createElement('i', { class: 'fa fa-commenting' }, null);
-    const commentA = createElement('a', { class: '' }, iconComment);
-    const postIcons = createElement('div', { class: 'post-icons' }, [commentA]);
+    // const iconComment = createElement('i', { class: 'fa fa-commenting' }, null);
+    // const commentA = createElement('a', { class: '' }, iconComment);
+    // const postIcons = createElement('div', { class: 'post-icons' }, [commentA]);
 
-    const postDetails = createElement('div', { class: 'post-details' }, [userDetails, postContent, postIcons]);
+    const postDetails = createElement('div', { class: 'post-details' }, [userDetails, postContent]);
 
     const onePost = createElement('div', { class: 'post' }, [postVotes, postDetails]);
     posts.appendChild(onePost);
